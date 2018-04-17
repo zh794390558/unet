@@ -231,7 +231,7 @@ if __name__ == "__main__":
 	#aug.Augmentation()
 	#aug.splitMerge()
 	#aug.splitTransform()
-	mydata = dataProcess(512,512)
+	mydata = dataProcess(512,512, data_path='data/train/image', label_path='data/train/label', test_path='data/test', npy_path='data/npydata')
 	mydata.create_train_data()
 	mydata.create_test_data()
 	#imgs_train,imgs_mask_train = mydata.load_train_data()
