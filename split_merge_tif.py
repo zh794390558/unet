@@ -5,11 +5,9 @@ from libtiff import TIFF3D,TIFF
 dirtype = ("train","label","test")
 
 def split_img():
-
 	'''
 	split a tif volume into single tif
 	'''
-
 	for t in dirtype:
 		imgdir = TIFF3D.open(t + "-volume.tif")
 		imgarr = imgdir.read_image()
@@ -19,11 +17,9 @@ def split_img():
 			img.write_image(imgarr[i])
 
 def merge_img():
-	
 	'''
 	merge single tif into a tif volume
 	'''
-
 	path = '/home/zhixuhao/Downloads/imgs_mask_test_server2/'
 	imgdir = TIFF3D.open("test_mask_volume_server2.tif",'w')
 	imgarr = []
@@ -33,8 +29,4 @@ def merge_img():
 	imgdir.write_image(imgarr)
 
 if __name__ == "__main__":
-
 	merge_img()
-
-
-
